@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+function createTable(data) {
+  var table = document.createElement('table');
+  var thead = document.createElement('thead');
+  var headerRow = document.createElement('tr');
+  for (var prop in data[0]) {
+    if (data[0].hasOwnProperty(prop)) {
+      var th = document.createElement('th');
+      th.textContent = prop;
+      headerRow.appendChild(th);
+    }
+  }
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+  // var tbody = document.createElement('tbody');
+  // for (var i = 0; i < data.length; i++) {
+  //   var dataRow = document.createElement('tr');
+  //   for (var prop in data[i]) {
+  //     if (data[i].hasOwnProperty(prop)) {
+  //       var td = document.createElement('td');
+  //       td.textContent = data[i][prop];
+  //       dataRow.appendChild(td);
+  //     }
+  //   }
+  //   tbody.appendChild(dataRow);
+  // }
+  // table.appendChild(tbody);
+  // document.body.appendChild(table);
+}
+
+var data = [
+  { name: 'John', age: 25, city: 'New York' },
+  { name: 'Jane', age: 30, city: 'San Francisco' },
+  { name: 'Bob', age: 35, city: 'Chicago' }
+];
+
+createTable(data); 
+</script>
